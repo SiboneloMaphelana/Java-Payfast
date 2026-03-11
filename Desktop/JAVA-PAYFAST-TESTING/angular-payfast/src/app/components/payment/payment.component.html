@@ -73,6 +73,47 @@
       </div>
 
       <div class="form-section">
+        <h2>Payment Method</h2>
+        <div class="payment-methods">
+          <label
+            *ngFor="let method of paymentMethods"
+            class="payment-method-option"
+            [class.selected]="payment.paymentMethod === method.value"
+          >
+            <input
+              type="radio"
+              [(ngModel)]="payment.paymentMethod"
+              [value]="method.value"
+              name="paymentMethod"
+              class="radio-hidden"
+            />
+            <div class="method-icon">
+              <svg *ngIf="method.icon === 'debit'" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="2" y="5" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="2" y1="10" x2="22" y2="10"></line>
+                <line x1="6" y1="14" x2="10" y2="14"></line>
+              </svg>
+              <svg *ngIf="method.icon === 'credit'" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="2" y="5" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="2" y1="10" x2="22" y2="10"></line>
+                <circle cx="17" cy="15" r="1.5"></circle>
+              </svg>
+              <svg *ngIf="method.icon === 'eft'" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M3 7h18M3 7l4-4M3 7l4 4"></path>
+                <path d="M21 17H3M21 17l-4-4M21 17l-4 4"></path>
+              </svg>
+            </div>
+            <span class="method-label">{{ method.label }}</span>
+            <span class="check-indicator" *ngIf="payment.paymentMethod === method.value">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+          </label>
+        </div>
+      </div>
+
+      <div class="form-section">
         <h2>Order Details</h2>
         <div class="form-group">
           <label for="itemName">Item Name</label>

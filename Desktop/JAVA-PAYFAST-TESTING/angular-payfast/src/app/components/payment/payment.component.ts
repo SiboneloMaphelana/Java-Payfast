@@ -15,8 +15,15 @@ export class PaymentComponent {
     cellNumber: '',
     amount: 0,
     itemName: '',
-    itemDescription: ''
+    itemDescription: '',
+    paymentMethod: 'dc'
   };
+
+  paymentMethods = [
+    { value: 'dc', label: 'Debit Card', icon: 'debit' },
+    { value: 'cc', label: 'Credit Card', icon: 'credit' },
+    { value: 'ef', label: 'EFT (Bank Transfer)', icon: 'eft' }
+  ];
 
   loading = false;
   error = '';

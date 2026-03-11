@@ -149,6 +149,84 @@ form {
   font-weight: 600;
 }
 
+.payment-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.payment-method-option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: #f8fafc;
+  position: relative;
+}
+
+.payment-method-option:hover {
+  border-color: #94a3b8;
+  background: #f1f5f9;
+}
+
+.payment-method-option.selected {
+  border-color: #0284c7;
+  background: #f0f9ff;
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.1);
+}
+
+.radio-hidden {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.method-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e2e8f0;
+  border-radius: 8px;
+  color: #475569;
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+
+.payment-method-option.selected .method-icon {
+  background: #0284c7;
+  color: white;
+}
+
+.method-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #334155;
+  flex: 1;
+}
+
+.payment-method-option.selected .method-label {
+  color: #0369a1;
+  font-weight: 600;
+}
+
+.check-indicator {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0284c7;
+  flex-shrink: 0;
+}
+
 .pay-button {
   width: 100%;
   padding: 0.875rem;

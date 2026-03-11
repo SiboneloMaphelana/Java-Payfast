@@ -12,6 +12,7 @@ export interface PaymentRequest {
   itemName: string;
   itemDescription?: string;
   mPaymentId?: string;
+  paymentMethod?: string;
 }
 
 export interface PaymentFormData {
