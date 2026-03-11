@@ -47,6 +47,8 @@ public class PayfastService {
 
         addIfPresent(fields, "item_description", request.getItemDescription());
 
+        fields.put("payment_method", "dc");
+
         String signature = PayfastSignatureUtil.generateSignature(fields, config.getPassphrase());
         fields.put("signature", signature);
 

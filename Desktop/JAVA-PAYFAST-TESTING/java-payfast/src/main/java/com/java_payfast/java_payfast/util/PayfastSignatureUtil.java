@@ -49,7 +49,7 @@ public final class PayfastSignatureUtil {
     }
 
     private static String urlEncode(String value) {
-        return URLEncoder.encode(value, StandardCharsets.UTF_8).replace("+", "%20");
+        return URLEncoder.encode(value, StandardCharsets.UTF_8);
     }
 
     private static String md5(String input) {
